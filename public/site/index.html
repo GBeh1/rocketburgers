@@ -37,64 +37,72 @@
     <section id="menu" class="section">
       <div class="container">
         <h2 class="section-title">Our Menu</h2>
+<!-- Burgers -->
+<h3 class="category">Burgers</h3>
 
-        <!-- Burgers -->
-        <h3 class="category">Burgers</h3>
-        <div class="grid">
-          <article class="card">
-            <div class="thumb"><img src="images/afterburner.jpg" alt="Afterburner Burger" /></div>
-            <div class="card-body">
-              <h4>Afterburner</h4>
-              <p>Spicy jalapeños, pepper jack, Rocket sauce.</p>
-              <span class="price">$9.49</span>
-            </div>
-          </article>
+<div class="carousel" aria-label="Burger carousel">
+  <button class="arrow arrow-left" aria-label="Previous" >◀</button>
 
-          <article class="card">
-            <div class="thumb"><img src="images/bacon-western.jpg" alt="Bacon Western Burger" /></div>
-            <div class="card-body">
-              <h4>Bacon Western</h4>
-              <p>Bacon, onion rings, BBQ sauce, American cheese.</p>
-              <span class="price">$9.99</span>
-            </div>
-          </article>
+  <div class="viewport">
+    <div class="track">
+      <article class="card">
+        <div class="thumb"><img src="images/afterburner.jpg" alt="Afterburner Burger" /></div>
+        <div class="card-body">
+          <h4>Afterburner</h4>
+          <p>Spicy jalapeños, pepper jack, Rocket sauce.</p>
+          <span class="price">$9.49</span>
+        </div>
+      </article>
 
-          <article class="card">
-            <div class="thumb"><img src="images/baja-burger.jpg" alt="Baja Burger" /></div>
-            <div class="card-body">
-              <h4>Baja Burger</h4>
-              <p>Southwest flavors, fresh pico, creamy slaw.</p>
-              <span class="price">$9.49</span>
-            </div>
-          </article>
+      <article class="card">
+        <div class="thumb"><img src="images/bacon-western.jpg" alt="Bacon Western Burger" /></div>
+        <div class="card-body">
+          <h4>Bacon Western</h4>
+          <p>Bacon, onion rings, BBQ sauce, American cheese.</p>
+          <span class="price">$9.99</span>
+        </div>
+      </article>
 
-          <article class="card">
-            <div class="thumb"><img src="images/beast-burger.jpg" alt="Beast Burger" /></div>
-            <div class="card-body">
-              <h4>Beast Burger</h4>
-              <p>Double patty, double cheese, pickles, tomato.</p>
-              <span class="price">$10.99</span>
-            </div>
-          </article>
+      <article class="card">
+        <div class="thumb"><img src="images/baja-burger.jpg" alt="Baja Burger" /></div>
+        <div class="card-body">
+          <h4>Baja Burger</h4>
+          <p>Southwest flavors, fresh pico, creamy slaw.</p>
+          <span class="price">$9.49</span>
+        </div>
+      </article>
 
-          <article class="card">
-            <div class="thumb"><img src="images/cali-burger.jpg" alt="Cali Burger" /></div>
-            <div class="card-body">
-              <h4>Cali Burger</h4>
-              <p>Avocado, Swiss, lettuce, tomato, house sauce.</p>
-              <span class="price">$9.49</span>
-            </div>
-          </article>
+      <article class="card">
+        <div class="thumb"><img src="images/beast-burger.jpg" alt="Beast Burger" /></div>
+        <div class="card-body">
+          <h4>Beast Burger</h4>
+          <p>Double patty, double cheese, pickles, tomato.</p>
+          <span class="price">$10.99</span>
+        </div>
+      </article>
 
-          <article class="card">
-            <div class="thumb"><img src="images/cali-chicken-sandwich.jpg" alt="Cali Chicken Sandwich" /></div>
-            <div class="card-body">
-              <h4>Cali Chicken Sandwich</h4>
-              <p>Crispy chicken, avocado, tomato, shredded lettuce.</p>
-              <span class="price">$9.99</span>
-            </div>
-          </article>
-        </div><!-- /grid -->
+      <article class="card">
+        <div class="thumb"><img src="images/cali-burger.jpg" alt="Cali Burger" /></div>
+        <div class="card-body">
+          <h4>Cali Burger</h4>
+          <p>Avocado, Swiss, lettuce, tomato, house sauce.</p>
+          <span class="price">$9.49</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="thumb"><img src="images/cali-chicken-sandwich.jpg" alt="Cali Chicken Sandwich" /></div>
+        <div class="card-body">
+          <h4>Cali Chicken Sandwich</h4>
+          <p>Crispy chicken, avocado, tomato, shredded lettuce.</p>
+          <span class="price">$9.99</span>
+        </div>
+      </article>
+    </div><!-- /track -->
+  </div><!-- /viewport -->
+
+  <button class="arrow arrow-right" aria-label="Next">▶</button>
+</div><!-- /carousel -->
 
         <!-- Subs & Sandwiches -->
         <h3 class="category">Subs &amp; Sandwiches</h3>
@@ -190,5 +198,102 @@
       <p>© 2025 RocketBurgers — Old-school burger vibes in pink, blue & white.</p>
     </div>
   </footer>
+
+<script>
+(function () {
+  const carousel = document.querySelector('.carousel');
+  const track = carousel.querySelector('.track');
+  const viewport = carousel.querySelector('.viewport');
+  const prev = carousel.querySelector('.arrow-left');
+  const next = carousel.querySelector('.arrow-right');
+
+  let step = 0;                // px per 1-card move (card width + gap)
+  let isAnimating = false;     // lock to prevent spamming during transition
+
+  // Helpers
+  function gapPx() {
+    return parseFloat(getComputedStyle(track).gap || '0');
+  }
+  function computeStep() {
+    const first = track.children[0];
+    if (!first) return 0;
+    return first.getBoundingClientRect().width + gapPx();
+  }
+  function setTransform(x) {
+    track.style.transform = `translateX(${x}px)`;
+  }
+
+  // Measure on load/resize (and after images load)
+  function measure() {
+    step = computeStep();
+    // Reset to "neutral" position
+    track.style.transition = 'none';
+    setTransform(0);
+    // Force reflow to apply transition reset
+    track.getBoundingClientRect();
+    track.style.transition = 'transform .35s ease';
+  }
+
+  // Move forward by 1 card (leftward slide). After slide, send first card to end.
+  function goNext() {
+    if (isAnimating || !step) return;
+    isAnimating = true;
+    setTransform(-step);                           // animate left by 1 card
+    const onDone = () => {
+      track.removeEventListener('transitionend', onDone);
+      // 1) Stop animating momentarily
+      track.style.transition = 'none';
+      // 2) Move first card to the end
+      track.appendChild(track.firstElementChild);
+      // 3) Snap back to neutral position without showing a jump
+      setTransform(0);
+      // 4) Re-enable transition for the next click
+      // Force reflow so the next transition is respected
+      track.getBoundingClientRect();
+      track.style.transition = 'transform .35s ease';
+      isAnimating = false;
+    };
+    track.addEventListener('transitionend', onDone, { once: true });
+  }
+
+  // Move backward by 1 card (rightward slide). Prepend last card, then animate to neutral.
+  function goPrev() {
+    if (isAnimating || !step) return;
+    isAnimating = true;
+    // 1) Stop transition and pre-position content one step left
+    track.style.transition = 'none';
+    track.insertBefore(track.lastElementChild, track.firstElementChild);
+    setTransform(-step);                           // jump left by one card instantly
+    // 2) Force reflow, then animate back to neutral (looks like a right slide)
+    track.getBoundingClientRect();
+    track.style.transition = 'transform .35s ease';
+    setTransform(0);
+    const onDone = () => {
+      track.removeEventListener('transitionend', onDone);
+      isAnimating = false;
+    };
+    track.addEventListener('transitionend', onDone, { once: true });
+  }
+
+  // Wire buttons
+  next.addEventListener('click', goNext);
+  prev.addEventListener('click', goPrev);
+
+  // Optional keyboard support (focus the carousel then use ←/→)
+  carousel.tabIndex = 0;
+  carousel.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') goNext();
+    if (e.key === 'ArrowLeft')  goPrev();
+  });
+
+  // Resize-aware (and after images load)
+  const ro = new ResizeObserver(measure);
+  ro.observe(viewport);
+  window.addEventListener('load', measure);
+})();
+</script>
+
+
+
 </body>
 </html>

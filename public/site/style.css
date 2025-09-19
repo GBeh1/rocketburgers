@@ -1,7 +1,3 @@
-/* =========================
-   RocketBurgers – Base Styles
-   ========================= */
-
 /* Theme */
 :root{
   --pink:#ff4fa3;
@@ -103,13 +99,10 @@ body{
 .card-body p{ margin:0 0 10px; color:var(--muted); }
 .price{ font-weight:800; color:var(--blue); }
 
-/* === UNIFORM THUMBNAILS (the fix) ===
-   Every image MUST be wrapped:
-   <div class="thumb"><img src="..." alt=""></div>
-*/
+/* === UNIFORM THUMBNAILS (the fix) === */
 .card .thumb{
   width:100%;
-  height:200px;          /* <- single, consistent height for ALL menu photos */
+  height:200px;          
   overflow:hidden;
   border-radius:8px;
   background:#eee;
@@ -117,7 +110,7 @@ body{
 }
 .card .thumb img{
   width:100%; height:100%;
-  object-fit:cover;      /* fills the box, crops edges evenly */
+  object-fit:cover;      
   display:block;
 }
 
@@ -135,3 +128,78 @@ body{
 
 /* Small polish */
 .menu-cta{ margin-top:16px; }
+
+/* ========================= */
+/* Burgers Carousel (revised) */
+/* ========================= */
+.carousel {
+  position: relative;            /* establishes stacking context for arrows */
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.viewport {
+  position: relative;            /* stabilizes stacking during transforms */
+  overflow: hidden;
+  width: 100%;
+}
+
+.track {
+  display: flex;
+  gap: 22px;                     /* matches your .grid gap */
+  will-change: transform;
+  transition: transform .35s ease;
+}
+
+/* 4 across on large screens; responsive below */
+.carousel .card {
+  position: relative;            /* ensures card sits below arrows */
+  z-index: 1;
+  flex: 0 0 calc(25% - 16px);
+}
+
+/* ---- Arrows (always above cards) ---- */
+.arrow {
+  position: absolute;
+  z-index: 1000;                 /* <-- key fix so arrows sit on top */
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  border-radius: 999px;
+  padding: .7rem .8rem;
+  background: var(--blue);
+  color: #fff;
+  cursor: pointer;
+  opacity: .95;
+  box-shadow: var(--shadow);
+  transition: opacity .15s ease, transform .15s ease;
+}
+/* ---- Arrows (larger, floating outside) ---- */
+.arrow {
+  position: absolute;
+  z-index: 1000;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  border-radius: 50%;
+  width: 52px;             /* bigger size */
+  height: 52px;
+  font-size: 1.5rem;       /* larger arrow symbol */
+  background: var(--blue);
+  color: #fff;
+  cursor: pointer;
+  opacity: .9;
+  box-shadow: 0 4px 12px rgba(0,0,0,.25);
+  transition: opacity .15s ease, transform .15s ease;
+}
+.arrow:hover { opacity: 1; }
+.arrow:active { transform: translateY(-50%) scale(0.95); }
+
+.arrow-left  { left: -2.5rem; }   /* float outside the carousel */
+.arrow-right { right: -2.5rem; }
+
+/* Tuck arrows in slightly on smaller screens */
+@media (max-width: 768px) {
+  .arrow-left  { left: .25rem; }
+  .arrow-right { right: .25rem; }
+}
