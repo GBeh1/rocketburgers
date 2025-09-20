@@ -158,22 +158,7 @@ body{
   flex: 0 0 calc(25% - 16px);
 }
 
-/* ---- Arrows (always above cards) ---- */
-.arrow {
-  position: absolute;
-  z-index: 1000;                 /* <-- key fix so arrows sit on top */
-  top: 50%;
-  transform: translateY(-50%);
-  border: none;
-  border-radius: 999px;
-  padding: .7rem .8rem;
-  background: var(--blue);
-  color: #fff;
-  cursor: pointer;
-  opacity: .95;
-  box-shadow: var(--shadow);
-  transition: opacity .15s ease, transform .15s ease;
-}
+
 /* ---- Arrows (larger, floating outside) ---- */
 .arrow {
   position: absolute;
@@ -494,4 +479,51 @@ html { scroll-behavior: smooth; }
   .card-body h4{ font-size: .9rem; }
   .card-body p{ font-size: .8rem; }
   .price{ font-size: .85rem; }
+}
+
+/* Keep section headings visible when jumping from the Menu ▾ dropdown */
+[id^="sec-"] { scroll-margin-top: 90px; }
+
+html{
+  scroll-behavior: smooth;                 /* nice scrolling */
+  scroll-padding-top: var(--header-h, 96px); /* offset for sticky header */
+}
+/* Smooth scrolling + reserve space for sticky header */
+html{
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-h, 120px);  /* global offset */
+}
+
+/* Elements you jump to (sec-*) also keep space */
+[id^="sec-"]{
+  scroll-margin-top: var(--header-h, 120px);
+}
+
+/* Fallback for cases where scroll-padding/margin is ignored */
+[id^="sec-"]::before{
+  content:"";
+  display:block;
+  height: var(--header-h, 120px);
+  margin-top: calc(var(--header-h, 120px) * -1);
+  pointer-events:none;
+}
+/* Anchored section titles must stop below the sticky header */
+[id^="sec-"]{
+  scroll-margin-top: var(--header-h, 130px);
+  position: relative;               /* helps some browsers with offset math */
+}
+
+/* Global smooth scrolling + default offset (JS updates --header-h) */
+html{
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-h, 130px);
+}
+
+/* Extra fallback: create visual space exactly at the heading */
+[id^="sec-"]::before{
+  content:"";
+  display:block;
+  height: var(--header-h, 130px);
+  margin-top: calc(var(--header-h, 130px) * -1);
+  pointer-events:none;
 }
