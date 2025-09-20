@@ -307,3 +307,93 @@ html { scroll-behavior: smooth; }
 @media (max-width: 520px){
   .social-label{ display:none; }
 }
+/* =========================
+   MOBILE POLISH PACK
+   ========================= */
+
+/* Base: give the page some breathing room on tiny screens */
+@media (max-width: 480px){
+  .container{ padding: 0 14px; }
+  .section{ padding: 44px 0; }
+  .section-title{ font-size: 1.6rem; }
+}
+
+/* Header: stack neatly, smaller logo, wrap nav, keep sticky tidy */
+@media (max-width: 768px){
+  .site-header{ border-bottom-width: 2px; }
+  .header-inner{
+    display: grid;
+    grid-template-columns: 1fr auto; /* logo left, actions right */
+    grid-template-rows: auto auto;   /* nav can wrap under */
+    gap: 8px 12px;
+    align-items: center;
+  }
+  .logo{ font-size: 1.4rem; line-height: 1.2; }
+  .nav{ justify-self: start; grid-column: 1 / -1; display: flex; gap: 16px; flex-wrap: wrap; }
+  .nav a{ margin: 0; font-weight: 700; }
+  .social{ justify-self: end; }
+  .social-label{ display: none; } /* save space */
+}
+
+/* Dropdown: make sure it doesn’t overflow off-screen */
+@media (max-width: 768px){
+  .nav-item.dropdown{ position: relative; }
+  .dropdown-menu{
+    left: 0;
+    right: auto;
+    min-width: 200px;
+    transform: translateY(2px);
+  }
+}
+
+/* Hero: buttons stack nicely; partner buttons full-width */
+@media (max-width: 768px){
+  .hero{ padding: 48px 0 40px; }
+  .hero h2{ font-size: 1.8rem; }
+  .cta-row{ flex-direction: column; }
+  .btn-lg{ width: 100%; text-align: center; }
+  .storefront-row{ gap: 10px; }
+  .storefront-row .store-btn{ flex: 1 1 46%; text-align: center; }
+}
+@media (max-width: 480px){
+  .storefront-row .store-btn{ width: 100%; flex: 1 1 100%; }
+  .or-sep{ margin-top: 10px; }
+}
+
+/* Cards & grid: go single column, reduce thumb height for faster fold */
+@media (max-width: 900px){
+  .grid{ grid-template-columns: 1fr; gap: 18px; }
+}
+@media (max-width: 480px){
+  .card .thumb{ height: 160px; }
+}
+
+/* Carousel: keep arrows visible, bring inside on mobile, bigger tap targets */
+@media (max-width: 900px){
+  .arrow{
+    width: 40px; height: 40px; font-size: 18px; line-height: 40px;
+    box-shadow: 0 6px 18px rgba(0,0,0,.12);
+  }
+  /* bring arrows inside so they don't clip off-screen */
+  .arrow-left{  left: 6px; }
+  .arrow-right{ right: 6px; }
+}
+@media (max-width: 480px){
+  /* slightly shrink the gap so one card fits more comfortably */
+  .track{ gap: 14px; }
+}
+
+/* Category headings: tighter spacing */
+@media (max-width: 768px){
+  .category{ margin: 18px 0 8px; font-size: 1.1rem; }
+}
+
+/* Contact section form: single column is already set; just tighten */
+@media (max-width: 768px){
+  .contact-grid{ gap: 18px; }
+}
+
+/* Footer: smaller text on phones */
+@media (max-width: 480px){
+  .site-footer .container{ padding: 14px 0; font-size: .9rem; }
+}
