@@ -203,3 +203,107 @@ body{
   .arrow-left  { left: .25rem; }
   .arrow-right { right: .25rem; }
 }
+/* ===== Layering fix: arrows below sticky header, above cards ===== */
+.carousel { 
+  position: relative; 
+  z-index: auto;        /* ensure no high stacking on the whole carousel */
+}
+
+/* Arrows should NOT sit on top of the header */
+.arrow {
+  z-index: 10;          /* higher than cards (1), lower than header (50) */
+}
+
+/* Keep cards under arrows */
+.card { 
+  position: relative; 
+  z-index: 1; 
+}
+
+/* Header already has z-index: 50 in your CSS; keep it that way */
+.site-header { 
+  z-index: 50; 
+}
+/* Header dropdown */
+.nav { display:flex; align-items:center; gap:24px; }
+.nav-item.dropdown { position:relative; }
+
+.nav-link.dropdown-toggle {
+  background:none; border:none; font:inherit; font-weight:700;
+  color:var(--ink); cursor:pointer; padding:0; line-height:1;
+}
+.nav-link.dropdown-toggle:hover { color:var(--blue); }
+
+.dropdown-menu {
+  position:absolute; top:calc(100% + 10px); left:0;
+  min-width: 220px; padding:8px; margin:0;
+  list-style:none; background:#fff; border:1px solid var(--border);
+  border-radius:10px; box-shadow:var(--shadow); display:none; z-index:60;
+}
+.dropdown-menu a {
+  display:block; padding:8px 10px; text-decoration:none;
+  color:var(--ink); border-radius:8px;
+}
+.dropdown-menu a:hover { background:var(--bg); color:var(--blue); }
+
+/* Show when opened */
+.dropdown.open .dropdown-menu { display:block; }
+
+/* Desktop: also open on hover */
+@media (hover:hover) {
+  .dropdown:hover .dropdown-menu { display:block; }
+}
+html { scroll-behavior: smooth; }
+
+/* Storefront buttons row */
+.storefront-row{
+  display:flex; gap:12px; justify-content:center; flex-wrap:wrap;
+  margin-top:16px;
+}
+.store-btn{
+  display:inline-block;
+  padding:12px 16px;
+  border-radius:12px;
+  font-weight:800;
+  text-decoration:none;
+  color:#fff;
+  box-shadow:var(--shadow);
+  transition:transform .06s ease, filter .15s ease;
+}
+.store-btn:active{ transform:translateY(1px); }
+.store-btn:hover{ filter:brightness(.95); }
+
+/* Brand-inspired colors (not official logos) */
+.store-btn.doordash { background:#ff3008; }      /* DoorDash red */
+.store-btn.ubereats { background:#06c167; }      /* Uber Eats green */
+.store-btn.grubhub  { background:#f63440; }      /* Grubhub red */
+.store-btn.postmates{ background:#111; }         /* Postmates black */
+
+/* “or” separator */
+.or-sep{
+  margin:14px auto 0;
+  width:40px; height:40px; line-height:40px; text-align:center;
+  border-radius:999px; background:#fff; color:var(--muted);
+  border:1px solid var(--border);
+  box-shadow:var(--shadow);
+}
+
+/* Keep existing hero button sizing consistent */
+.cta-row{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:12px; }
+.btn-lg{ font-size:1.1rem; padding:12px 18px; }
+.btn-outline{ background:transparent; color:var(--blue); border:2px solid var(--blue); }
+.btn-outline:hover{ background:var(--blue); color:#fff; }
+
+/* Small screens: make partner buttons full width */
+@media (max-width: 480px){
+  .storefront-row .store-btn{ width:100%; text-align:center; }
+}
+.social{ display:flex; align-items:center; gap:10px; }
+.social-label{ font-weight:700; color:var(--ink); }
+.social-link svg{ width:22px; height:22px; fill:currentColor; }
+.social-link{ color:#111; opacity:.85; }
+.social-link:hover{ opacity:1; color:var(--blue); }
+
+@media (max-width: 520px){
+  .social-label{ display:none; }
+}

@@ -3,150 +3,86 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>RocketBurgers</title>
+  <title>Rocket Burger &amp Subs</title>
   <meta name="description" content="Hand-spun shakes, juicy burgers, crispy fries. Old-school burger shop vibes." />
-  <link rel="stylesheet" href="style.css?v=110" />
+  <link rel="stylesheet" href="style.css?v=1" />
   <link rel="icon" href="images/favicon.png" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- Header -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <h1 class="logo"><span class="pink">Rocket</span><span class="blue">Burgers</span></h1>
-      <nav class="nav" aria-label="Primary">
-        <a href="#menu">Menu</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </nav>
+  <!-- Header -->
+<header class="site-header">
+  <div class="container header-inner">
+    <h1 class="logo">
+      <span class="pink">Rocket</span> <span class="blue">Burgers</span> &amp; <span class="blue">Subs</span>
+    </h1>
+
+    <!-- Primary Nav with "Menu" dropdown -->
+    <nav class="nav" aria-label="Primary">
+      <div class="nav-item dropdown">
+        <button class="nav-link dropdown-toggle" id="menuToggle" aria-haspopup="true" aria-expanded="false">
+          Menu ▾
+        </button>
+        <ul class="dropdown-menu" id="menuDropdown" role="menu" aria-labelledby="menuToggle"></ul>
+      </div>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- >>> This is the new part: social icons live in the header, next to the nav <<< -->
+    <div class="social">
+      <span class="social-label">Follow us</span>
+      <a href="https://www.facebook.com/people/Rocket-Burger-Subs/100058709066070/" target="_blank" rel="noopener"
+         aria-label="Follow RocketBurgers on Facebook" title="Facebook" class="social-link">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12.06C22 6.48 17.52 2 11.94 2S2 6.48 2 12.06c0 4.97 3.63 9.1 8.38 9.94v-7.03H7.9v-2.9h2.48V9.41c0-2.45 1.46-3.8 3.7-3.8 1.07 0 2.2.19 2.2.19v2.42h-1.24c-1.22 0-1.6.76-1.6 1.55v1.86h2.72l-.43 2.9h-2.29v7.03C18.37 21.16 22 17.03 22 12.06z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/rocketburger/" target="_blank" rel="noopener"
+         aria-label="Follow RocketBurgers on Instagram" title="Instagram" class="social-link">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm0 2a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3H7zm5 3.5A5.5 5.5 0 1111.999 20.5 5.5 5.5 0 0112 7.5zm0 2A3.5 3.5 0 1015.5 13 3.5 3.5 0 0012 9.5zm6.25-3a1.25 1.25 0 11-1.25 1.25A1.25 1.25 0 0118.25 6.5z"/></svg>
+      </a>
     </div>
-  </header>
+  </div>
+</header>
+
 
   <main id="main">
     <!-- Hero -->
-    <section id="hero" class="hero">
-      <div class="container">
-        <h2>Classic Burger Shop Vibes 🚀🍔</h2>
-        <p>Serving hand-spun shakes, juicy burgers, and crispy fries since 2025.</p>
-        <a class="btn" href="#menu">View Menu</a>
-      </div>
-    </section>
+   <section id="hero" class="hero">
+  <div class="container">
+    <h2>Classic Burger Shop Vibes 🚀🍔</h2>
+    <p>Serving hand-spun shakes, juicy burgers, and crispy fries since 2025.</p>
+
+    <!-- Marketplace storefronts -->
+    <div class="storefront-row" role="group" aria-label="Order from delivery partners">
+      <a class="store-btn doordash"  href="https://www.doordash.com/store/rocket-burger-&-subs-phoenix-38877/16941406/?event_type=autocomplete&pickup=false"  target="_blank" rel="noopener" aria-label="Order on DoorDash">DoorDash</a>
+      <a class="store-btn ubereats"  href="https://www.ubereats.com/store/rocket-burger-%26-subs-phoenix/CsM_6ZBcSdqWKsjvrXq6ig?diningMode=DELIVERY&sc=SEARCH_SUGGESTION" target="_blank" rel="noopener" aria-label="Order on Uber Eats">Uber Eats</a>
+      <a class="store-btn grubhub"   href="https://www.grubhub.com/restaurant/rocket-burger--subs-12038-n-35th-ave-ste-2-phoenix/590495" target="_blank" rel="noopener" aria-label="Order on Grubhub">Grubhub</a>
+      <a class="store-btn postmates" href="https://postmates.com/store/rocket-burger-%26-subs-phoenix/CsM_6ZBcSdqWKsjvrXq6ig?diningMode=DELIVERY&sc=SEARCH_SUGGESTION"     target="_blank" rel="noopener" aria-label="Order on Postmates">Postmates</a>
+    </div>
+
+    <div class="or-sep" aria-hidden="true">or</div>
+
+    <!-- Your direct ordering (below on page or your own order page) -->
+    <div class="cta-row">
+      <a class="btn btn-lg" href="#menu" aria-label="Order below from our menu">Order Below</a>
+      <!-- If you have a direct order page, add this too:
+      <a class="btn btn-outline btn-lg" href="/order.html?method=pickup" aria-label="Order online for in-store pickup">In-Store Pickup</a>
+      -->
+    </div>
+  </div>
+</section>
+
+
 
     <!-- ================= MENU ================= -->
     <section id="menu" class="section">
       <div class="container">
         <h2 class="section-title">Our Menu</h2>
-<!-- Burgers -->
-<h3 class="category">Burgers</h3>
 
-<div class="carousel" aria-label="Burger carousel">
-  <button class="arrow arrow-left" aria-label="Previous" >◀</button>
-
-  <div class="viewport">
-    <div class="track">
-      <article class="card">
-        <div class="thumb"><img src="images/afterburner.jpg" alt="Afterburner Burger" /></div>
-        <div class="card-body">
-          <h4>Afterburner</h4>
-          <p>Spicy jalapeños, pepper jack, Rocket sauce.</p>
-          <span class="price">$9.49</span>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="thumb"><img src="images/bacon-western.jpg" alt="Bacon Western Burger" /></div>
-        <div class="card-body">
-          <h4>Bacon Western</h4>
-          <p>Bacon, onion rings, BBQ sauce, American cheese.</p>
-          <span class="price">$9.99</span>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="thumb"><img src="images/baja-burger.jpg" alt="Baja Burger" /></div>
-        <div class="card-body">
-          <h4>Baja Burger</h4>
-          <p>Southwest flavors, fresh pico, creamy slaw.</p>
-          <span class="price">$9.49</span>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="thumb"><img src="images/beast-burger.jpg" alt="Beast Burger" /></div>
-        <div class="card-body">
-          <h4>Beast Burger</h4>
-          <p>Double patty, double cheese, pickles, tomato.</p>
-          <span class="price">$10.99</span>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="thumb"><img src="images/cali-burger.jpg" alt="Cali Burger" /></div>
-        <div class="card-body">
-          <h4>Cali Burger</h4>
-          <p>Avocado, Swiss, lettuce, tomato, house sauce.</p>
-          <span class="price">$9.49</span>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="thumb"><img src="images/cali-chicken-sandwich.jpg" alt="Cali Chicken Sandwich" /></div>
-        <div class="card-body">
-          <h4>Cali Chicken Sandwich</h4>
-          <p>Crispy chicken, avocado, tomato, shredded lettuce.</p>
-          <span class="price">$9.99</span>
-        </div>
-      </article>
-    </div><!-- /track -->
-  </div><!-- /viewport -->
-
-  <button class="arrow arrow-right" aria-label="Next">▶</button>
-</div><!-- /carousel -->
-
-        <!-- Subs & Sandwiches -->
-        <h3 class="category">Subs &amp; Sandwiches</h3>
-        <div class="grid">
-          <article class="card">
-            <div class="thumb"><img src="images/big-dipper-sub.jpg" alt="Big Dipper Sub" /></div>
-            <div class="card-body">
-              <h4>Big Dipper</h4>
-              <p>Roast beef, Swiss, toasted roll, au jus on the side.</p>
-              <span class="price">$8.99</span>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="thumb"><img src="images/cali-club.jpg" alt="California Club" /></div>
-            <div class="card-body">
-              <h4>California Club</h4>
-              <p>Turkey, bacon, avocado, sprouts, tomato, Swiss.</p>
-              <span class="price">$9.49</span>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="thumb"><img src="images/blt.jpg" alt="BLT Sandwich" /></div>
-            <div class="card-body">
-              <h4>BLT</h4>
-              <p>Bacon, lettuce, tomato, mayo on toasted bread.</p>
-              <span class="price">$7.49</span>
-            </div>
-          </article>
-        </div><!-- /grid -->
-
-        <!-- Sides -->
-        <h3 class="category">Sides</h3>
-        <div class="grid">
-          <article class="card">
-            <div class="thumb"><img src="images/cheese-curds.jpg" alt="Cheese Curds" /></div>
-            <div class="card-body">
-              <h4>Cheese Curds</h4>
-              <p>Lightly battered, fried, squeaky-good.</p>
-              <span class="price">$7.99</span>
-            </div>
-          </article>
-        </div><!-- /grid -->
+        <!-- JS will render all sections here from menu.json -->
+        <div id="menu-root"></div>
 
         <div class="menu-cta">
           <a class="btn" href="#contact">Call to Order</a>
@@ -195,105 +131,11 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p>© 2025 RocketBurgers — Old-school burger vibes in pink, blue & white.</p>
+      <p>© 2025 RocketBurgers — Old-school burger vibes in pink, blue &amp; white.</p>
     </div>
   </footer>
 
-<script>
-(function () {
-  const carousel = document.querySelector('.carousel');
-  const track = carousel.querySelector('.track');
-  const viewport = carousel.querySelector('.viewport');
-  const prev = carousel.querySelector('.arrow-left');
-  const next = carousel.querySelector('.arrow-right');
-
-  let step = 0;                // px per 1-card move (card width + gap)
-  let isAnimating = false;     // lock to prevent spamming during transition
-
-  // Helpers
-  function gapPx() {
-    return parseFloat(getComputedStyle(track).gap || '0');
-  }
-  function computeStep() {
-    const first = track.children[0];
-    if (!first) return 0;
-    return first.getBoundingClientRect().width + gapPx();
-  }
-  function setTransform(x) {
-    track.style.transform = `translateX(${x}px)`;
-  }
-
-  // Measure on load/resize (and after images load)
-  function measure() {
-    step = computeStep();
-    // Reset to "neutral" position
-    track.style.transition = 'none';
-    setTransform(0);
-    // Force reflow to apply transition reset
-    track.getBoundingClientRect();
-    track.style.transition = 'transform .35s ease';
-  }
-
-  // Move forward by 1 card (leftward slide). After slide, send first card to end.
-  function goNext() {
-    if (isAnimating || !step) return;
-    isAnimating = true;
-    setTransform(-step);                           // animate left by 1 card
-    const onDone = () => {
-      track.removeEventListener('transitionend', onDone);
-      // 1) Stop animating momentarily
-      track.style.transition = 'none';
-      // 2) Move first card to the end
-      track.appendChild(track.firstElementChild);
-      // 3) Snap back to neutral position without showing a jump
-      setTransform(0);
-      // 4) Re-enable transition for the next click
-      // Force reflow so the next transition is respected
-      track.getBoundingClientRect();
-      track.style.transition = 'transform .35s ease';
-      isAnimating = false;
-    };
-    track.addEventListener('transitionend', onDone, { once: true });
-  }
-
-  // Move backward by 1 card (rightward slide). Prepend last card, then animate to neutral.
-  function goPrev() {
-    if (isAnimating || !step) return;
-    isAnimating = true;
-    // 1) Stop transition and pre-position content one step left
-    track.style.transition = 'none';
-    track.insertBefore(track.lastElementChild, track.firstElementChild);
-    setTransform(-step);                           // jump left by one card instantly
-    // 2) Force reflow, then animate back to neutral (looks like a right slide)
-    track.getBoundingClientRect();
-    track.style.transition = 'transform .35s ease';
-    setTransform(0);
-    const onDone = () => {
-      track.removeEventListener('transitionend', onDone);
-      isAnimating = false;
-    };
-    track.addEventListener('transitionend', onDone, { once: true });
-  }
-
-  // Wire buttons
-  next.addEventListener('click', goNext);
-  prev.addEventListener('click', goPrev);
-
-  // Optional keyboard support (focus the carousel then use ←/→)
-  carousel.tabIndex = 0;
-  carousel.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowRight') goNext();
-    if (e.key === 'ArrowLeft')  goPrev();
-  });
-
-  // Resize-aware (and after images load)
-  const ro = new ResizeObserver(measure);
-  ro.observe(viewport);
-  window.addEventListener('load', measure);
-})();
-</script>
-
-
-
+  <!-- Load dynamic menu + dropdown builder (ABSOLUTE BOTTOM) -->
+  <script src="menu.js"></script>
 </body>
 </html>

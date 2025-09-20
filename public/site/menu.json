@@ -1,0 +1,124 @@
+{
+  "sections": [
+    {
+      "title": "Burgers",
+      "type": "carousel",
+      "items": [
+        { "name": "Rocket Burger", "desc": "Signature burger with house Rocket sauce.", "price": 0, "img": "images/rocket-burger.jpg", "alt": "Rocket Burger" },
+        { "name": "Regular Burger", "desc": "Lettuce, tomato, pickle, onion, Rocket sauce.", "price": 0, "img": "images/regular-burger.jpg", "alt": "Regular Burger" },
+        { "name": "Cheeseburger", "desc": "Classic American cheese and fixings.", "price": 0, "img": "images/cheeseburger.jpg", "alt": "Cheeseburger" },
+        { "name": "Bacon Burger", "desc": "Crispy bacon with the classics.", "price": 0, "img": "images/bacon-burger.jpg", "alt": "Bacon Burger" },
+        { "name": "Bacon Cheeseburger", "desc": "Bacon + melted cheese.", "price": 0, "img": "images/bacon-cheeseburger.jpg", "alt": "Bacon Cheeseburger" },
+        { "name": "Mushroom Swiss Burger", "desc": "Sautéed mushrooms, Swiss, garlic mayo.", "price": 0, "img": "images/mushroom-swiss.jpg", "alt": "Mushroom Swiss Burger" },
+        { "name": "Jalapeño Burger", "desc": "Fresh jalapeños, pepper jack, Rocket sauce.", "price": 0, "img": "images/jalapeno-burger.jpg", "alt": "Jalapeño Burger" },
+        { "name": "BBQ Burger", "desc": "BBQ sauce, grilled onions, cheddar.", "price": 0, "img": "images/bbq-burger.jpg", "alt": "BBQ Burger" },
+        { "name": "Chili Burger", "desc": "Smothered in house chili.", "price": 0, "img": "images/chili-burger.jpg", "alt": "Chili Burger" },
+        { "name": "Chili Cheese Burger", "desc": "Chili + melted cheese.", "price": 0, "img": "images/chili-cheese-burger.jpg", "alt": "Chili Cheese Burger" },
+        { "name": "Guacamole Burger", "desc": "Fresh guac, lettuce, tomato.", "price": 0, "img": "images/guacamole-burger.jpg", "alt": "Guacamole Burger" },
+        { "name": "Cali Burger", "desc": "Avocado, Swiss, bacon, veggies.", "price": 0, "img": "images/cali-burger.jpg", "alt": "Cali Burger" },
+        { "name": "Garlic Melt Burger", "desc": "Garlic mayo, Swiss, grilled onions.", "price": 0, "img": "images/garlic-melt.jpg", "alt": "Garlic Melt Burger" },
+        { "name": "Santa Fe Burger", "desc": "Green chile, bacon, cheese, Rocket sauce.", "price": 0, "img": "images/santa-fe-burger.jpg", "alt": "Santa Fe Burger" },
+        { "name": "Western Bacon Burger", "desc": "Bacon, onion rings, BBQ sauce, cheese.", "price": 0, "img": "images/western-bacon-burger.jpg", "alt": "Western Bacon Burger" },
+        { "name": "Pastrami Burger", "desc": "Stack of pastrami, mustard, pickles.", "price": 0, "img": "images/pastrami-burger.jpg", "alt": "Pastrami Burger" },
+        { "name": "Blue Cheese Burger", "desc": "Crumbled blue cheese, bacon.", "price": 0, "img": "images/blue-cheese-burger.jpg", "alt": "Blue Cheese Burger" },
+        { "name": "Hawaiian Burger", "desc": "Grilled pineapple, teriyaki glaze, Swiss.", "price": 0, "img": "images/hawaiian-burger.jpg", "alt": "Hawaiian Burger" },
+        { "name": "Patty Melt", "desc": "Burger on grilled bread with onions & cheese.", "price": 0, "img": "images/patty-melt.jpg", "alt": "Patty Melt" },
+        { "name": "Veggie Burger", "desc": "Vegetarian patty with classic fixings.", "price": 0, "img": "images/veggie-burger.jpg", "alt": "Veggie Burger" },
+        { "name": "Afterburner Burger", "desc": "Jalapeños, pepper jack, Afterburner sauce.", "price": 0, "img": "images/afterburner-burger.jpg", "alt": "Afterburner Burger" }
+      ]
+    },
+    {
+      "title": "Classic Subs & Sandwiches",
+      "type": "carousel",
+      "items": [
+        { "name": "Italian Sub", "desc": "Pepperoni, salami, provolone, veggies, Italian dressing.", "price": 0, "img": "images/italian-sub.jpg", "alt": "Italian Sub" },
+        { "name": "California Club", "desc": "Turkey, bacon, avocado, sprouts, Swiss.", "price": 0, "img": "images/cali-club.jpg", "alt": "California Club" },
+        { "name": "Reuben", "desc": "Corned beef, Swiss, sauerkraut, dressing on rye.", "price": 0, "img": "images/reuben.jpg", "alt": "Reuben" },
+        { "name": "Big Dipper", "desc": "Roast beef, Swiss, toasted roll, au jus.", "price": 0, "img": "images/big-dipper-sub.jpg", "alt": "Big Dipper" },
+        { "name": "The Dip", "desc": "Sliced beef, provolone, au jus for dipping.", "price": 0, "img": "images/the-dip.jpg", "alt": "The Dip Sandwich" },
+        { "name": "Philly Cheesesteak", "desc": "Steak, onions, peppers, melted cheese.", "price": 0, "img": "images/philly.jpg", "alt": "Philly Cheesesteak" },
+        { "name": "Meatball Sub", "desc": "Meatballs, marinara, provolone.", "price": 0, "img": "images/meatball-sub.jpg", "alt": "Meatball Sub" },
+        { "name": "Turkey & Swiss", "desc": "Turkey, Swiss, lettuce, tomato, mayo.", "price": 0, "img": "images/turkey-swiss.jpg", "alt": "Turkey & Swiss" },
+        { "name": "Ham & Swiss", "desc": "Ham, Swiss, lettuce, tomato, mayo.", "price": 0, "img": "images/ham-swiss.jpg", "alt": "Ham & Swiss" },
+        { "name": "Roast Beef", "desc": "Roast beef, provolone, horseradish mayo.", "price": 0, "img": "images/roast-beef.jpg", "alt": "Roast Beef Sandwich" },
+        { "name": "BLT", "desc": "Bacon, lettuce, tomato, mayo.", "price": 0, "img": "images/blt.jpg", "alt": "BLT" },
+        { "name": "Veggie Sub", "desc": "Lettuce, tomato, pickles, onions, olives, cukes, peppers, avocado (optional).", "price": 0, "img": "images/veggie-sub.jpg", "alt": "Veggie Sub" }
+      ]
+    },
+    {
+      "title": "Rocket Dogs",
+      "type": "carousel",
+      "items": [
+        { "name": "Hot Dog", "desc": "All-beef hot dog your way.", "price": 0, "img": "images/hot-dog.jpg", "alt": "Hot Dog" },
+        { "name": "Chili Dog", "desc": "Topped with house chili.", "price": 0, "img": "images/chili-dog.jpg", "alt": "Chili Dog" },
+        { "name": "Chili Cheese Dog", "desc": "Chili and melted cheese.", "price": 0, "img": "images/chili-cheese-dog.jpg", "alt": "Chili Cheese Dog" },
+        { "name": "Sauerkraut Dog", "desc": "Classic kraut topping.", "price": 0, "img": "images/sauerkraut-dog.jpg", "alt": "Sauerkraut Dog" },
+        { "name": "Chicago Dog", "desc": "Tomato, relish, onion, sport peppers, celery salt, pickle spear, mustard.", "price": 0, "img": "images/chicago-dog.jpg", "alt": "Chicago Dog" },
+        { "name": "Rocket Dog", "desc": "Loaded dog with the works.", "price": 0, "img": "images/rocket-dog.jpg", "alt": "Rocket Dog" }
+      ]
+    },
+    {
+      "title": "Rocket Sides",
+      "type": "carousel",
+      "items": [
+        { "name": "Fries", "desc": "Golden and crispy.", "price": 0, "img": "images/fries.jpg", "alt": "Fries" },
+        { "name": "Cheese Fries", "desc": "Smothered in cheese.", "price": 0, "img": "images/cheese-fries.jpg", "alt": "Cheese Fries" },
+        { "name": "Chili Fries", "desc": "Hearty chili over fries.", "price": 0, "img": "images/chili-fries.jpg", "alt": "Chili Fries" },
+        { "name": "Chili Cheese Fries", "desc": "Chili and melted cheese.", "price": 0, "img": "images/chili-cheese-fries.jpg", "alt": "Chili Cheese Fries" },
+        { "name": "Onion Rings", "desc": "Thick-cut, crispy.", "price": 0, "img": "images/onion-rings.jpg", "alt": "Onion Rings" },
+        { "name": "Fried Zucchini", "desc": "Breaded and fried.", "price": 0, "img": "images/fried-zucchini.jpg", "alt": "Fried Zucchini" }
+      ]
+    },
+    {
+      "title": "Mini Corn Dogs",
+      "type": "carousel",
+      "items": [
+        { "name": "6 Piece Mini Corn Dogs", "desc": "Bite-sized corn dogs.", "price": 0, "img": "images/mini-corn-dogs-6.jpg", "alt": "6 Piece Mini Corn Dogs" },
+        { "name": "14 Piece Mini Corn Dogs", "desc": "Shareable size.", "price": 0, "img": "images/mini-corn-dogs-14.jpg", "alt": "14 Piece Mini Corn Dogs" }
+      ]
+    },
+    {
+      "title": "Fresh Salads",
+      "type": "carousel",
+      "items": [
+        { "name": "Garden Salad (Small)", "desc": "Fresh greens and veggies.", "price": 0, "img": "images/garden-salad-small.jpg", "alt": "Garden Salad Small" },
+        { "name": "Garden Salad (Large)", "desc": "Bigger portion.", "price": 0, "img": "images/garden-salad-large.jpg", "alt": "Garden Salad Large" },
+        { "name": "Crispy Chicken Salad", "desc": "Crispy chicken on greens.", "price": 0, "img": "images/crispy-chicken-salad.jpg", "alt": "Crispy Chicken Salad" },
+        { "name": "Greek Salad", "desc": "Olives, feta, greens.", "price": 0, "img": "images/greek-salad.jpg", "alt": "Greek Salad" },
+        { "name": "Chef Salad", "desc": "Meats, cheese, veggies.", "price": 0, "img": "images/chef-salad.jpg", "alt": "Chef Salad" }
+      ]
+    },
+    {
+      "title": "Chicken & More",
+      "type": "carousel",
+      "items": [
+        { "name": "Chicken Tender Sandwich", "desc": "Crispy tenders, lettuce, tomato, mayo.", "price": 0, "img": "images/chicken-tender-sandwich.jpg", "alt": "Chicken Tender Sandwich" },
+        { "name": "Teriyaki Chicken Sandwich", "desc": "Teriyaki glaze, Swiss, lettuce, tomato.", "price": 0, "img": "images/teriyaki-chicken-sandwich.jpg", "alt": "Teriyaki Chicken Sandwich" },
+        { "name": "Buffalo Chicken Sandwich", "desc": "Buffalo sauce, lettuce, ranch.", "price": 0, "img": "images/buffalo-chicken-sandwich.jpg", "alt": "Buffalo Chicken Sandwich" },
+        { "name": "Afterburner Chicken Sandwich", "desc": "Jalapeños, pepper jack, Afterburner sauce.", "price": 0, "img": "images/afterburner-chicken-sandwich.jpg", "alt": "Afterburner Chicken Sandwich" },
+        { "name": "Fish Sandwich", "desc": "Hand-breaded fish, tartar, slaw (optional).", "price": 0, "img": "images/fish-sandwich.jpg", "alt": "Fish Sandwich" },
+        { "name": "Grilled Cheese", "desc": "Melted cheese on grilled bread.", "price": 0, "img": "images/grilled-cheese.jpg", "alt": "Grilled Cheese" }
+      ]
+    },
+   {
+  "title": "Gyros",
+  "type": "carousel",
+  "items": [
+    { "name": "Gyro", "desc": "Beef & lamb gyro with veggies and sauce.", "price": 0, "img": "images/gyro.jpg", "alt": "Gyro" }
+  ]
+},
+    {
+      "title": "Ice Cream",
+      "type": "carousel",
+      "items": [
+        { "name": "Cone", "desc": "Vanilla, chocolate, or twist.", "price": 0, "img": "images/ice-cream-cone.jpg", "alt": "Ice Cream Cone" },
+        { "name": "Sundae", "desc": "Choice of toppings.", "price": 0, "img": "images/sundae.jpg", "alt": "Sundae" },
+        { "name": "Shake", "desc": "Vanilla, chocolate, strawberry.", "price": 0, "img": "images/shake.jpg", "alt": "Shake" },
+        { "name": "Malt", "desc": "Old-school malted shake.", "price": 0, "img": "images/malt.jpg", "alt": "Malt" },
+        { "name": "Float", "desc": "Soda + ice cream.", "price": 0, "img": "images/float.jpg", "alt": "Float" },
+        { "name": "Rocket Freeze", "desc": "Blended treat with add-ins.", "price": 0, "img": "images/rocket-freeze.jpg", "alt": "Rocket Freeze" },
+        { "name": "Rocket Blast", "desc": "Candy mixed-in frozen treat.", "price": 0, "img": "images/rocket-blast.jpg", "alt": "Rocket Blast" }
+      ]
+    }
+  ]
+}
