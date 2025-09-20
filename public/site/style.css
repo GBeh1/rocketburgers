@@ -455,3 +455,43 @@ html { scroll-behavior: smooth; }
 @media (pointer: coarse), (max-width: 768px){
   .arrow{ display: none !important; pointer-events: none; }
 }
+/* === MOBILE: smaller cards, 2 per screen === */
+
+/* 1) Grid sections: 2-up on phones */
+@media (max-width: 600px){
+  .grid{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    justify-items: stretch;     /* let cards fill their cell */
+  }
+  .card{
+    max-width: none;            /* remove earlier width caps */
+    border-radius: 12px;
+  }
+  .card .thumb{ height: 120px; }/* smaller image (≈50% look) */
+  .card-body{ padding: 10px; }
+  .card-body h4{ font-size: .95rem; margin: 0 0 4px; }
+  .card-body p{
+    font-size: .85rem;
+    -webkit-line-clamp: 2;      /* keep cards short */
+    min-height: 2.2em;
+  }
+  .price{ font-size: .9rem; }
+}
+
+/* 2) Carousels: make each slide ~50% width so 2 fit on screen */
+@media (max-width: 600px){
+  .track{ gap: 12px; }
+  .track > .card{
+    flex: 0 0 calc(50% - 6px);  /* two visible cards (gap/2) */
+    max-width: none;
+  }
+}
+
+/* 3) Very small phones: tighten a touch more */
+@media (max-width: 380px){
+  .card .thumb{ height: 110px; }
+  .card-body h4{ font-size: .9rem; }
+  .card-body p{ font-size: .8rem; }
+  .price{ font-size: .85rem; }
+}
